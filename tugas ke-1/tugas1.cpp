@@ -1,9 +1,11 @@
 #include<iostream>
-#define maxsize 10
+
 using namespace std;
 
-class Stack
-{
+//Define konstan
+int const maxsize = 10;
+
+class Stack{
     int top;
     int a[maxsize];
     public:
@@ -61,8 +63,7 @@ class Stack
     };
 };
 
-int main()
-{
+int main(){
     Stack s;
     int ch,element,result;
     while(1)
@@ -70,45 +71,37 @@ int main()
         cout<<"*--------------------------------------------------------------------*"<<endl;
         cout<<"1.PUSH  2.POP  3.DISPLAY  4.ISFULL  5.ISEMPTY  6.TOP  7.SIZE  8.EXIT "<<endl;
         cout<<"*--------------------------------------------------------------------*"<<endl;
-    cin>>ch;
-    if(ch==1)
-    {
-        cout<<"enter element ";
-        cin>>element;
-        s.push(element);
-    }
-    else if(ch==2)
-    {
-        s.pop();
-    }
-    else if(ch==3)
-    {
-        s.display();
-    }
-    else if(ch==4)
-    {
-        if(s.isfull())
-            cout<<"STACK IS FULL"<<endl;
-        else
-            cout<<"STACK IS NOT FULL"<<endl<<"YOU CAN PUSH"<<endl;
-    }
-    else if(ch==5)
-    {
-        if(s.isempty())
-            cout<<"STACK IS EMPTY"<<endl;
-        else
-            cout<<"STACK IS NOT EMPTY"<<endl<<"YOU CAN POP"<<endl;
-    }
-    else if(ch==6)
-    {
-        s.Top();
-    }
-    else if(ch==7)
-    {
-        s.Size();
-    }
-    else
-    return 0;
+        cin>>ch;
+        if(ch==1){
+            cout<<"enter element ";
+            cin>>element;
+            s.push(element);
+        }else if(ch==2){
+            s.pop();
+        }else if(ch==3){
+            s.display();
+        }else if(ch==4){
+            if(s.isfull()){
+                cout<<"STACK IS FULL"<<endl;
+            }else{
+                cout<<"STACK IS NOT FULL"<<endl<<"YOU CAN PUSH"<<endl;
+            }
+        }
+        else if(ch==5){
+            if(s.isempty()){
+                cout<<"STACK IS EMPTY"<<endl;
+            }else{
+                cout<<"STACK IS NOT EMPTY"<<endl<<"YOU CAN POP"<<endl;
+            }
+        }else if(ch==6)
+        {
+            s.Top();
+        }else if(ch==7)
+        {
+            s.Size();
+        }else{
+            return 0;
+        }
     }
     return 0;
 }
